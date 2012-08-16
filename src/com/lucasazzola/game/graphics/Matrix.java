@@ -171,11 +171,7 @@ public class Matrix {
 		Matrix out = new Matrix();
 		for (int i = 0; i < m2.m.length; i++) {
 			for (int j = 0; j < m2.m[0].length; j++) {
-<<<<<<< HEAD
 				out.m[i][j] = m1.m[i][j] - m2.m[i][j];
-=======
-				out.m[i][j] = m1.m[i][j] + m2.m[i][j];
->>>>>>> 98177f6cf6277a3c30aa0cd4d04953a48d4920ce
 			}
 		}
 		return out;
