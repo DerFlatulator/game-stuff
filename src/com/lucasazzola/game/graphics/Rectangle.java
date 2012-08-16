@@ -1,7 +1,7 @@
 package com.lucasazzola.game.graphics;
 
 /**
- * Two dimensional Point class
+ * Rectangle class
  * 
  * @author Lucas Azzola
  * @since 16/8/2012
