@@ -249,6 +249,22 @@ public class Matrix {
 	}
 
 	/**
+	 * Negates the Matrix passed, and returns itself
+	 * 
+	 * @param matrix
+	 *            the matrix to negate
+	 * @return the the reference to the matrix passed
+	 */
+	public static Matrix negate(Matrix matrix) {
+		for (int i = 0; i < matrix.m.length; i++) {
+			for (int j = 0; j < matrix.m[0].length; j++) {
+				matrix.m[i][j] = -matrix.m[i][j];
+			}
+		}
+		return matrix;
+	}
+
+	/**
 	 * Get a (scaling) matrix array from a Vector
 	 * 
 	 * @param vector
@@ -334,6 +350,54 @@ public class Matrix {
 		out.z = matrix.m[2][0] * vector.x + matrix.m[2][1] * vector.y
 				+ matrix.m[2][2] * vector.z;
 		return out;
+	}
+
+	/**
+	 * Sets the X Scale of the matrix (M11)
+	 * 
+	 * @param xScale
+	 *            the scale to apply
+	 */
+	public void setXScale(float xScale) {
+		m[0][0] = xScale;
+	}
+
+	/**
+	 * Sets the Y Scale of the matrix (M22)
+	 * 
+	 * @param yScale
+	 *            the scale to apply
+	 */
+	public void setYScale(float yScale) {
+		m[0][0] = yScale;
+	}
+
+	/**
+	 * Sets the Z Scale of the matrix (M33)
+	 * 
+	 * @param zScale
+	 *            the scale to apply
+	 */
+	public void setZScale(float zScale) {
+		m[0][0] = zScale;
+	}
+
+	/**
+	 * Sets all elements other than M11, M22 and M33 to 0.
+	 * 
+	 * @param toThis
+	 *            true to manipulate this, false to clone
+	 * @return a reference to this, or the new matrix
+	 */
+	public Matrix trimToScalarMatrix(boolean toThis) {
+		Matrix temp = toThis ? this : new Matrix(this);
+		temp.m[0][1] = 0;
+		temp.m[0][2] = 0;
+		temp.m[1][0] = 0;
+		temp.m[1][2] = 0;
+		temp.m[2][0] = 0;
+		temp.m[2][1] = 0;
+		return temp;
 	}
 
 	@Override
