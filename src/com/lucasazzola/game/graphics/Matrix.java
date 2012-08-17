@@ -14,8 +14,9 @@ public class Matrix {
 
 	/**
 	 * Public Matrix
+	 * 
+	 * [Column-1][Row-1]
 	 */
-	// R C
 	public float[][] m;
 
 	/**
@@ -369,7 +370,7 @@ public class Matrix {
 	 *            the scale to apply
 	 */
 	public void setYScale(float yScale) {
-		m[0][0] = yScale;
+		m[1][1] = yScale;
 	}
 
 	/**
@@ -379,7 +380,7 @@ public class Matrix {
 	 *            the scale to apply
 	 */
 	public void setZScale(float zScale) {
-		m[0][0] = zScale;
+		m[2][2] = zScale;
 	}
 
 	/**
