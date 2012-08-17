@@ -140,6 +140,22 @@ public class Matrix {
 	}
 
 	/**
+	 * Increments this by another matrix
+	 * 
+	 * @param matrix
+	 *            the matrix to increment this by
+	 * @return this, for chaining
+	 */
+	public Matrix increment(Matrix matrix) {
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[0].length; j++) {
+				m[i][j] += matrix.m[i][j];
+			}
+		}
+		return this;
+	}
+
+	/**
 	 * Add two matrices
 	 * 
 	 * @param matrix
@@ -159,6 +175,26 @@ public class Matrix {
 	}
 
 	/**
+	 * Add two matrices
+	 * 
+	 * @param m1
+	 *            the first Matrix
+	 * @param m2
+	 *            the matrix to add
+	 * @param out
+	 *            the resulting Matrix, values will be assigned to this
+	 * @return the out param, for chainability
+	 */
+	public static Matrix add(Matrix m1, Matrix m2, Matrix out) {
+		for (int i = 0; i < m2.m.length; i++) {
+			for (int j = 0; j < m2.m[0].length; j++) {
+				out.m[i][j] = m1.m[i][j] + m2.m[i][j];
+			}
+		}
+		return out;
+	}
+
+	/**
 	 * Subtract one matrix from another
 	 * 
 	 * @param m1
@@ -169,6 +205,26 @@ public class Matrix {
 	 */
 	public static Matrix subtract(Matrix m1, Matrix m2) {
 		Matrix out = new Matrix();
+		for (int i = 0; i < m2.m.length; i++) {
+			for (int j = 0; j < m2.m[0].length; j++) {
+				out.m[i][j] = m1.m[i][j] - m2.m[i][j];
+			}
+		}
+		return out;
+	}
+
+	/**
+	 * Subtract one matrix from another
+	 * 
+	 * @param m1
+	 *            the first Matrix
+	 * @param m2
+	 *            the matrix to subtract
+	 * @param out
+	 *            the resulting Matrix, values will be assigned to this
+	 * @return the out param, for chainability
+	 */
+	public static Matrix subtract(Matrix m1, Matrix m2, Matrix out) {
 		for (int i = 0; i < m2.m.length; i++) {
 			for (int j = 0; j < m2.m[0].length; j++) {
 				out.m[i][j] = m1.m[i][j] - m2.m[i][j];
@@ -239,6 +295,45 @@ public class Matrix {
 		float[][] m = { { v1.x, v1.y, v1.z }, { v2.x, v2.y, v2.z },
 				{ v3.x, v3.y, v3.z }, };
 		return m;
+	}
+
+	/**
+	 * Multiply a Vector3 by a 3x3 Matrix
+	 * 
+	 * @param matrix
+	 *            the Matrix
+	 * @return the resulting Vector3
+	 */
+	public Vector3 multiply(Vector3 vector) {
+		Vector3 out = new Vector3();
+		out.x = m[0][0] * vector.x + m[0][1] * vector.y + m[0][2] * vector.z;
+		out.y = m[1][0] * vector.x + m[1][1] * vector.y + m[1][2] * vector.z;
+		out.z = m[2][0] * vector.x + m[2][1] * vector.y + m[2][2] * vector.z;
+		return out;
+	}
+
+	/**
+	 * Multiply a Vector3 by a 3x3 Matrix
+	 * 
+	 * @param matrix
+	 *            the input Matrix
+	 * @param vector
+	 *            the input Vector
+	 * @param out
+	 *            the resulting Vector will be assigned to this vector
+	 * @return out, with the resulting vector values assigned
+	 */
+	public static Vector3 multiply(Matrix matrix, Vector3 vector, Vector3 out) {
+		// M11*V1 + M12*V2 + M13*V3
+		out.x = matrix.m[0][0] * vector.x + matrix.m[0][1] * vector.y
+				+ matrix.m[0][2] * vector.z;
+		// M21*V1 + M22*V2 + M23*V3
+		out.y = matrix.m[1][0] * vector.x + matrix.m[1][1] * vector.y
+				+ matrix.m[1][2] * vector.z;
+		// M31*V1 + M32*V2 + M33*V3
+		out.z = matrix.m[2][0] * vector.x + matrix.m[2][1] * vector.y
+				+ matrix.m[2][2] * vector.z;
+		return out;
 	}
 
 	@Override

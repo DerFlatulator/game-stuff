@@ -119,10 +119,39 @@ public class Vector3 {
 	}
 
 	/**
+	 * Increments this vector
+	 * 
+	 * @param vector
+	 *            the vector to increment by
+	 * @return this
+	 */
+	public Vector3 increment(Vector3 vector) {
+		x += vector.x;
+		y += vector.y;
+		z += vector.z;
+		return this;
+	}
+
+	/**
 	 * @see #scale(float)
 	 */
 	public Vector3 multiply(float scalar) {
 		return this.scale(scalar);
+	}
+
+	/**
+	 * Multiply a Vector3 by a 3x3 Matrix
+	 * 
+	 * @param matrix
+	 *            the Matrix
+	 * @return the resulting Vector3
+	 */
+	public Vector3 multiply(Matrix matrix) {
+		Vector3 out = new Vector3();
+		out.x = matrix.m[0][0] * x + matrix.m[0][1] * y + matrix.m[0][2] * z;
+		out.y = matrix.m[1][0] * x + matrix.m[1][1] * y + matrix.m[1][2] * z;
+		out.z = matrix.m[2][0] * x + matrix.m[2][1] * y + matrix.m[2][2] * z;
+		return out;
 	}
 
 	/**
