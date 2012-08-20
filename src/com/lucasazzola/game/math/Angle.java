@@ -17,8 +17,7 @@ public class Angle {
 	/**
 	 * Stores an angle, in radians
 	 * 
-	 * @param radians
-	 *            the angle in radians
+	 * @param radians the angle in radians
 	 */
 	public Angle(float radians) {
 		inRadians = radians;
@@ -29,10 +28,8 @@ public class Angle {
 	/**
 	 * Stores an angle, in degrees
 	 * 
-	 * @param degrees
-	 *            the angle in degrees
-	 * @param ignored
-	 *            this parameter is ignored (used to modify the signature)
+	 * @param degrees the angle in degrees
+	 * @param ignored this parameter is ignored (used to modify the signature)
 	 */
 	public Angle(float degrees, boolean ignored) {
 		inDegrees = degrees;
@@ -69,8 +66,7 @@ public class Angle {
 	/**
 	 * Converts an angle to radians
 	 * 
-	 * @param degrees
-	 *            the angle in radians
+	 * @param degrees the angle in radians
 	 * @return the angle in radians
 	 */
 	public static float degreesToRadians(float degrees) {
@@ -80,8 +76,7 @@ public class Angle {
 	/**
 	 * Converts an angle to degrees
 	 * 
-	 * @param radians
-	 *            the angle in degrees
+	 * @param radians the angle in degrees
 	 * @return the angle in degrees
 	 */
 	public static float radiansToDegrees(float radians) {

@@ -15,7 +15,7 @@ import com.lucasazzola.game.exception.MatrixIndexOutOfBoundsException;
  * @author Lucas Azzola
  * @since 16/8/2012
  */
-public class Matrix4 {
+public class Matrix4 extends Matrix {
 
 	/**
 	 * Public Matrix
