@@ -23,14 +23,10 @@ public class Rectangle {
 	/**
 	 * Constructs a rectangle with specified values
 	 * 
-	 * @param x
-	 *            The x-coordinate
-	 * @param y
-	 *            The y-coordinate
-	 * @param width
-	 *            the width (x+) of the rectangle
-	 * @param height
-	 *            the height (y+) of the rectangle
+	 * @param x The x-coordinate
+	 * @param y The y-coordinate
+	 * @param width the width (x+) of the rectangle
+	 * @param height the height (y+) of the rectangle
 	 */
 	public Rectangle(float x, float y, float width, float height) {
 		this.x = x;
@@ -42,40 +38,35 @@ public class Rectangle {
 	/**
 	 * Constructs a rectangle given another Rectangle
 	 * 
-	 * @param rectangle
-	 *            The rectangle to duplicate
+	 * @param rectangle The rectangle to duplicate
 	 */
 	public Rectangle(Rectangle rectangle) {
 		this(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 	}
 
 	/**
-	 * @param x
-	 *            the x coordinate
+	 * @param x the x coordinate
 	 */
 	public void setX(float x) {
 		this.x = x;
 	}
 
 	/**
-	 * @param y
-	 *            the y coordinate
+	 * @param y the y coordinate
 	 */
 	public void setY(float y) {
 		this.y = y;
 	}
 
 	/**
-	 * @param height
-	 *            the height of the rectangle, absolute value is taken.
+	 * @param height the height of the rectangle, absolute value is taken.
 	 */
 	public void setHeight(float height) {
 		this.height = height >= 0 ? height : -height;
 	}
 
 	/**
-	 * @param width
-	 *            the width of the rectangle, absolute value is taken.
+	 * @param width the width of the rectangle, absolute value is taken.
 	 */
 	public void setWidth(float width) {
 		this.width = width >= 0 ? width : -width;
@@ -129,8 +120,7 @@ public class Rectangle {
 	/**
 	 * Checks if a rectangle intersects this
 	 * 
-	 * @param rectangle
-	 *            the rectangle to compare to
+	 * @param rectangle the rectangle to compare to
 	 * @return true if the rectangles intersect
 	 */
 	public boolean intersects(Rectangle rectangle) {
@@ -141,8 +131,7 @@ public class Rectangle {
 	/**
 	 * Checks if a point intersects this
 	 * 
-	 * @param point
-	 *            the point to compare to
+	 * @param point the point to compare to
 	 * @return true if they intersect
 	 */
 	public boolean intersects(Point2 point) {
@@ -162,10 +151,8 @@ public class Rectangle {
 	/**
 	 * Shifts the rectangle relative to it's current position
 	 * 
-	 * @param dx
-	 *            The delta x
-	 * @param dy
-	 *            The delta y
+	 * @param dx The delta x
+	 * @param dy The delta y
 	 */
 	public void shift(float dx, float dy) {
 		x += dx;
@@ -175,8 +162,7 @@ public class Rectangle {
 	/**
 	 * Shifts the rectangle rightward relative to it's current position
 	 * 
-	 * @param dx
-	 *            The delta x
+	 * @param dx The delta x
 	 */
 	public void shiftRight(float dx) {
 		shift(dx, 0);
@@ -185,8 +171,7 @@ public class Rectangle {
 	/**
 	 * Shifts the rectangle upward relative to it's current position
 	 * 
-	 * @param dy
-	 *            The delta y
+	 * @param dy The delta y
 	 */
 	public void shiftUp(float dy) {
 		shift(0, dy);

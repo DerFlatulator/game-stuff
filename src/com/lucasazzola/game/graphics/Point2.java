@@ -23,10 +23,8 @@ public class Point2 {
 	/**
 	 * Constructs a point with set coordinates
 	 * 
-	 * @param x
-	 *            the x coordinate
-	 * @param y
-	 *            the y coordinate
+	 * @param x the x coordinate
+	 * @param y the y coordinate
 	 */
 	public Point2(float x, float y) {
 		this.x = x;
@@ -36,8 +34,7 @@ public class Point2 {
 	/**
 	 * Constructs a point given another point
 	 * 
-	 * @param point
-	 *            The point to duplicate
+	 * @param point The point to duplicate
 	 */
 	public Point2(Point2 point) {
 		this(point.x, point.y);
@@ -46,8 +43,7 @@ public class Point2 {
 	/**
 	 * Checks whether the point is within a rectangle
 	 * 
-	 * @param rectangle
-	 *            the rectangle
+	 * @param rectangle the rectangle
 	 * @return true if it intersects
 	 */
 	public boolean intersectsRectangle(Rectangle rectangle) {

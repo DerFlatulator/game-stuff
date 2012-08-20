@@ -23,12 +23,9 @@ public class Point3 {
 	/**
 	 * Constructs a point with set coordinates
 	 * 
-	 * @param x
-	 *            the x coordinate
-	 * @param y
-	 *            the y coordinate
-	 * @param z
-	 * 			  the z coordinate
+	 * @param x the x coordinate
+	 * @param y the y coordinate
+	 * @param z the z coordinate
 	 */
 	public Point3(float x, float y, float z) {
 		this.x = x;
@@ -39,8 +36,7 @@ public class Point3 {
 	/**
 	 * Constructs a point given another point
 	 * 
-	 * @param point
-	 *            The point to duplicate
+	 * @param point The point to duplicate
 	 */
 	public Point3(Point3 point) {
 		this(point.x, point.y, point.y);
@@ -75,7 +71,7 @@ public class Point3 {
 	}
 
 	@Override
-	public String toString() {	
+	public String toString() {
 		return String.format("[%.3f, %.3f, %.3f]", x, y, z);
 	}
 }

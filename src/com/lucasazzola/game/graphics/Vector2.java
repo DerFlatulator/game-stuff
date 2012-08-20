@@ -25,10 +25,8 @@ public class Vector2 {
 	/**
 	 * Constructor with arguments
 	 * 
-	 * @param x
-	 *            The x-coordinate
-	 * @param y
-	 *            The y-coordinate
+	 * @param x the x-coordinate
+	 * @param y the y-coordinate
 	 */
 	public Vector2(float x, float y) {
 		this.x = x;
@@ -38,8 +36,7 @@ public class Vector2 {
 	/**
 	 * Constructor from another Vector2
 	 * 
-	 * @param vector
-	 *            Another 2D Vector
+	 * @param vector Another 2D Vector
 	 */
 	public Vector2(Vector2 vector) {
 		this.x = vector.x;
@@ -49,10 +46,8 @@ public class Vector2 {
 	/**
 	 * The dot product of two vectors
 	 * 
-	 * @param v1
-	 *            The first vector
-	 * @param v2
-	 *            The second vector
+	 * @param v1 The first vector
+	 * @param v2 The second vector
 	 * @return the dot product of the two vectors
 	 */
 	public static float dot(Vector2 v1, Vector2 v2) {
@@ -89,14 +84,13 @@ public class Vector2 {
 	/**
 	 * Returns the scaled vector
 	 * 
-	 * @param scalar
-	 *            the scalar to scale by
+	 * @param scalar the scalar to scale by
 	 * @return a new, scaled Vector2
 	 */
 	public Vector2 scale(float scalar) {
 		return new Vector2(x * scalar, y * scalar);
 	}
-	
+
 	/**
 	 * @see #scale(float)
 	 */
@@ -107,8 +101,7 @@ public class Vector2 {
 	/**
 	 * Returns the vector divided by the scalar
 	 * 
-	 * @param scalar
-	 *            the scalar to divide by
+	 * @param scalar the scalar to divide by
 	 * @return a new Vector2 which is this/scalar
 	 */
 	public Vector2 divide(float scalar) {
@@ -118,8 +111,7 @@ public class Vector2 {
 	/**
 	 * Adds two vectors
 	 * 
-	 * @param v1
-	 *            the other vector
+	 * @param v1 the other vector
 	 * @return a new Vector which is the sum of this and v1
 	 */
 	public Vector2 plus(Vector2 v1) {
@@ -129,8 +121,7 @@ public class Vector2 {
 	/**
 	 * Subtracts one vector from another
 	 * 
-	 * @param v1
-	 *            vector to subtract from this
+	 * @param v1 vector to subtract from this
 	 * @return a new Vector which is this - v1
 	 */
 	public Vector2 minus(Vector2 v1) {
@@ -140,8 +131,7 @@ public class Vector2 {
 	/**
 	 * Gets the distance to another Vector (as a point)
 	 * 
-	 * @param vectorTo
-	 *            the vector to measure to
+	 * @param vectorTo the vector to measure to
 	 * @return the distance to the vector
 	 */
 	public float distanceTo(Vector2 vectorTo) {
@@ -168,7 +158,7 @@ public class Vector2 {
 				/ this.magnitude());
 		return new Angle(angle);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -195,7 +185,7 @@ public class Vector2 {
 	}
 
 	@Override
-	public String toString() {	
+	public String toString() {
 		return String.format("[%.3f, %.3f]", x, y);
 	}
 }
